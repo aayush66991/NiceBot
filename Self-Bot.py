@@ -2,9 +2,6 @@ import discord
 from discord.ext import commands
 import time
 
-a = 1
-b = 2
-
 bot = commands.Bot(command_prefix="+", self_bot=True)
 @bot.event
 async def on_ready():
@@ -17,14 +14,5 @@ async def ping(ctx):
     response = f"Pong! {ping}ms"
     await ctx.send(response)
 
-@bot.command()
-async def get(ctx):
-    while a < b:
-        async def stop(ctx):
-            b = b+2
-        msg = "+get"
-        response = msg
-        await ctx.send(response)
-        time.sleep(305)
-
-bot.run("", bot = False)
+TOKEN = "YOUR_TOKEN_HERE"
+bot.run(TOKEN, bot = False)
